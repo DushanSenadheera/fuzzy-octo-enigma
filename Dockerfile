@@ -5,7 +5,7 @@ FROM node:21-alpine
 WORKDIR /app
 
 # Copy the client folder into the container
-COPY /client/ /app/
+COPY ./client/ /app/
 
 # Install the dependencies
 RUN npm install
