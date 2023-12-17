@@ -1,17 +1,18 @@
-# Specify the base image
+# Use the Node Alpine image as the base image
 FROM node:21-alpine
 
-# Copy your application code to the container
-COPY ./ /app/
-
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Build your application
+# Copy the package.json and package-lock.json files to the working directory
+COPY package*.json ./
+
+# Install the dependencies
 RUN npm install
 
-# Expose port 
-EXPOSE 8000
+# Copy the rest of the application code to the working directory
+COPY . .
 
-# Run your application
+# Start the application
 CMD [ "npm", "run", "dev" ]
+
