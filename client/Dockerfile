@@ -4,14 +4,14 @@ FROM node:21-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the working directory
-COPY package*.json ./
+# Copy the client folder into the container
+COPY /client/ /app/
 
 # Install the dependencies
 RUN npm install
 
-# Copy the rest of the application code to the working directory
-COPY . .
+# Expose the port 8000
+EXPOSE 8000
 
 # Start the application
 CMD [ "npm", "run", "dev" ]
