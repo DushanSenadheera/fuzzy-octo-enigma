@@ -24,7 +24,6 @@ function App() {
   return (
     <div className="App">
       <h1>React Typescript Template</h1>
-      <h2>API Response:</h2>
       {data}
     </div>
   )
