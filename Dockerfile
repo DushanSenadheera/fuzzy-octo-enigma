@@ -10,9 +10,9 @@ COPY ./client/ /app/
 # Install the dependencies
 RUN npm install
 
-# Expose the port 8000
-EXPOSE 8000:8000
+# Expose the port 8000 
+EXPOSE 8000
 
 # Start the application
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "dev"]
 
