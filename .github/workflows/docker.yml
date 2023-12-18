@@ -25,3 +25,6 @@ jobs:
                 context: .
                 push: true
                 tags: dcsenadheera/my-app:latest
+                
+
+                
