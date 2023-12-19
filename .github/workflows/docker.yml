@@ -22,9 +22,13 @@ jobs:
             - name: Build and push Docker image
               uses: docker/build-push-action@v2
               with:
-                context: .
+                context: ./server
                 push: true
-                tags: dcsenadheera/my-app:latest
+                tags: dcsenadheera/my-app/server:latest     
                 
-
-                
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v2
+              with:
+                context: ./client
+                push: true
+                tags: dcsenadheera/my-app/client:latest  

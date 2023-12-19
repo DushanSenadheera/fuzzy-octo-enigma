@@ -13,6 +13,9 @@ services:
       - 8000:8000
     networks:
       - mynetwork
+    depends_on:
+      - serviceName: server
+        
 
 networks:
   mynetwork:
