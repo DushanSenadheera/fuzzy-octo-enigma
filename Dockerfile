@@ -11,8 +11,11 @@ RUN npm install
 # Copy client source code
 COPY ./client .
 
-# Build client
-RUN npm run build
+# Expose port
+EXPOSE 8000
+
+# Set entry point
+CMD ["npm", "run", "dev"]
 
 # Base image for server
 FROM node:alpine
@@ -29,7 +32,6 @@ COPY ./server .
 
 # Expose ports
 EXPOSE 3000
-EXPOSE 5000
 
 # Set entry point
 CMD ["npm", "start"]
