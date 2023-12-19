@@ -2,10 +2,10 @@
 FROM node:21-alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app/client
 
 # Copy the client folder into the container
-COPY ./client/ /app/
+COPY ./ /app/client/
 
 # Install the dependencies
 RUN npm install
@@ -15,4 +15,7 @@ EXPOSE 8000
 
 # Start the application
 CMD [ "npm", "run", "dev"]
+
+
+
 
